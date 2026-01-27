@@ -6,7 +6,7 @@ CallsignSentry is an Android-based "Brain-in-a-Box" that monitors the entire (ha
 ---
 
 ## 🎯 The Mission
-General Aviation pilots often operate in high-workload environments where "missing a call" from ATC is a common point of friction and potential major risk. CallsignSentry acts as a digital safety-net by providing:
+General Aviation pilots often operate in high-workload environments where "missing a call" from another station (like ATC) is a common point of friction and potential major risk. CallsignSentry acts as a digital safety-net by providing:
 1. **Omni-Frequency Monitoring:** Watches your active frequency AND others (e.g., nearby CTAFs, Guard) simultaneously.
 2. **Callsign Detection:** Passive AI-driven keyword spotting for your tail number or flight callsign.
 3. **Instant Recall:** A one-touch "What did they just say?" audio replay of the last transmission.
