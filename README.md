@@ -1,11 +1,11 @@
-# 📡 CallsignSentry (MVP)
+# 📡 CallsignSentry
 **The Guard Dog for Aviation Radio.**
 
 CallsignSentry is an Android-based "Brain-in-a-Box" that monitors the entire local airband spectrum. It uses a Wideband SDR and local AI to transcribe radio traffic in real-time, alerting the crew when their specific callsign is detected and providing instant playback of the last transmission.
 
 ---
 
-## 🎯 The Mission (MVP)
+## 🎯 The Mission
 General Aviation pilots often operate in high-workload environments where "missing a call" from ATC is a common point of friction. CallsignSentry acts as a digital safety-net by providing:
 1. **Omni-Frequency Monitoring:** Watches your active frequency AND others (e.g., ATIS, CTAF) simultaneously.
 2. **Callsign Detection:** Passive AI-driven keyword spotting for your tail number.
