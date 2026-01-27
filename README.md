@@ -29,7 +29,7 @@ We are prioritizing "proven blocks" to reach a functional prototype quickly:
 ## 🏗️ System Architecture
 1. **SDR Firehose:** SDR captures ~20MHz of bandwidth.
 2. **Slicing:** `rtl-airband` detects power-per-bin and "slices" transmissions into discrete PCM/WAV files.
-3. **Transcription:** Slices are fed into a local AI inference engine. (possibly using [WhisperATC](https://github.com/jlvdoorn/WhisperATC))
+3. **Transcription:** Slices are fed into a local AI inference engine. (possibly extending on [WhisperATC](https://github.com/jlvdoorn/WhisperATC))
 4. **Logic:** If `TRANSMISSION_TEXT` contains `LOCAL_CALLSIGN`, trigger an immediate visual/haptic alert.
 5. **Buffer:** The last 5 minutes of all audio slices are held in a RAM-based circular buffer for instant replay.
 
