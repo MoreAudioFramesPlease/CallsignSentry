@@ -1,7 +1,7 @@
 # 📡 CallsignSentry
 **The Guard Dog for Aviation Radio.**
 
-CallsignSentry is an Android-based "Brain-in-a-Box" that monitors the entire local airband radio spectrum. It uses an attached Wideband Software Defined Radio (SDR) and phone-local AI to transcribe radio traffic in real-time, alerting the crew when their specific callsign is detected, and providing instant playback of the last transmission.
+CallsignSentry is an Android-based "Brain-in-a-Box" that monitors the entire (hardware dependent) local airband radio spectrum. It uses an attached Wideband Software Defined Radio (SDR) and phone-local AI to transcribe radio traffic in real-time, alerting the crew when their specific callsign is detected, and providing instant playback of the last transmission.
 
 ---
 
