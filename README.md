@@ -1,19 +1,19 @@
 # 📡 CallsignSentry
 **The Guard Dog for Aviation Radio.**
 
-CallsignSentry is an Android-based "Brain-in-a-Box" that monitors the entire local airband spectrum. It uses a Wideband SDR and local AI to transcribe radio traffic in real-time, alerting the crew when their specific callsign is detected and providing instant playback of the last transmission.
+CallsignSentry is an Android-based "Brain-in-a-Box" that monitors the entire local airband radio spectrum. It uses a Wideband Software Defined Radio (SDR) and phone-local AI to transcribe radio traffic in real-time, alerting the crew when their specific callsign is detected, and providing instant playback of the last transmission.
 
 ---
 
 ## 🎯 The Mission
 General Aviation pilots often operate in high-workload environments where "missing a call" from ATC is a common point of friction. CallsignSentry acts as a digital safety-net by providing:
 1. **Omni-Frequency Monitoring:** Watches your active frequency AND others (e.g., ATIS, CTAF) simultaneously.
-2. **Callsign Detection:** Passive AI-driven keyword spotting for your tail number.
+2. **Callsign Detection:** Passive AI-driven keyword spotting for your tail number or flight callsign.
 3. **Instant Recall:** A one-touch "What did they just say?" audio replay of the last transmission.
 
 ---
 
-## 🛠️ The MVP Tech Stack
+## 🛠️ The Tech Stack
 We are prioritizing "proven blocks" to reach a functional prototype quickly:
 
 * **RF Ingest:** [RTLSDR-Airband](https://github.com/szpajder/RTLSDR-Airband) (The "Slicer").
@@ -36,7 +36,7 @@ We are prioritizing "proven blocks" to reach a functional prototype quickly:
 ## 🚧 Development Roadmap (Phase 1)
 - [ ] **Ingest:** Port/Cross-compile `rtl-airband` for Android (Termux/Native).
 - [ ] **Transcription:** Benchmark local Whisper.tflite/Vosk performance on mobile SoCs.
-- [ ] **Callsign Logic:** Implement fuzzy-string matching to account for transcription variants (e.g., "One-Two-Three" vs "123").
+- [ ] **Callsign Logic:** Implement fuzzy-string matching to account for transcription variants (e.g., "One-Two-Three" vs ICAO standard "One-Two-Tree" vs the vulgar "One-Hundred-Twenty-Three").
 - [ ] **UI:** Simple "Annunciator" screen with a single "REPLAY" button.
 
 ---
@@ -53,4 +53,4 @@ We are looking for:
 CallsignSentry is a **Portable Electronic Device (PED)** intended for situational awareness ONLY. It is not a certified avionics component and should never be used as a primary source for navigation or communication. Always "Aviate, Navigate, Communicate" in that order.
 
 ---
-*Inspired by the risk-stacking principles in "The Killing Zone".*
+*Inspired by the risk-stacking principles in "The Killing Zone", by Paul A. Craig.*
