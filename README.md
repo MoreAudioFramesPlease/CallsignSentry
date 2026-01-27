@@ -1,15 +1,17 @@
 # 📡 CallsignSentry
 **The Guard Dog for Aviation Radio.**
 
-CallsignSentry is an Android-based "Brain-in-a-Box" that monitors the entire local airband radio spectrum. It uses a Wideband Software Defined Radio (SDR) and phone-local AI to transcribe radio traffic in real-time, alerting the crew when their specific callsign is detected, and providing instant playback of the last transmission.
+CallsignSentry is an Android-based "Brain-in-a-Box" that monitors the entire local airband radio spectrum. It uses an attached Wideband Software Defined Radio (SDR) and phone-local AI to transcribe radio traffic in real-time, alerting the crew when their specific callsign is detected, and providing instant playback of the last transmission.
 
 ---
 
 ## 🎯 The Mission
 General Aviation pilots often operate in high-workload environments where "missing a call" from ATC is a common point of friction. CallsignSentry acts as a digital safety-net by providing:
-1. **Omni-Frequency Monitoring:** Watches your active frequency AND others (e.g., ATIS, CTAF) simultaneously.
+1. **Omni-Frequency Monitoring:** Watches your active frequency AND others (e.g., nearby CTAFs, Guard) simultaneously.
 2. **Callsign Detection:** Passive AI-driven keyword spotting for your tail number or flight callsign.
 3. **Instant Recall:** A one-touch "What did they just say?" audio replay of the last transmission.
+
+🪽 For non-pilots to better understand how contributing could one day help save someone's life, please see [Project Vision & Safety Mission](https://github.com/MoreAudioFramesPlease/CallsignSentry/blob/main/VISION.md).
 
 ---
 
@@ -27,7 +29,7 @@ We are prioritizing "proven blocks" to reach a functional prototype quickly:
 ## 🏗️ System Architecture
 1. **SDR Firehose:** SDR captures ~20MHz of bandwidth.
 2. **Slicing:** `rtl-airband` detects power-per-bin and "slices" transmissions into discrete PCM/WAV files.
-3. **Transcription:** Slices are fed into a local AI inference engine.
+3. **Transcription:** Slices are fed into a local AI inference engine. (possibly using [WhisperATC](https://github.com/jlvdoorn/WhisperATC)
 4. **Logic:** If `TRANSMISSION_TEXT` contains `LOCAL_CALLSIGN`, trigger an immediate visual/haptic alert.
 5. **Buffer:** The last 5 minutes of all audio slices are held in a RAM-based circular buffer for instant replay.
 
