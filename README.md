@@ -1,5 +1,5 @@
 # 📡 CallsignSentry (MVP)
-**The "Undo" Button for Aviation Radio.**
+**The Guard Dog for Aviation Radio.**
 
 CallsignSentry is an Android-based "Brain-in-a-Box" that monitors the entire local airband spectrum. It uses a Wideband SDR and local AI to transcribe radio traffic in real-time, alerting the crew when their specific callsign is detected and providing instant playback of the last transmission.
 
