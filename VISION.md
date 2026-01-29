@@ -1,4 +1,4 @@
-🛡️ The "Why": Solving the Cognitive Gap in Flight
+🛡️ The "Why": Cognitive Gap in Flight
 
 In modern aviation, we have moved the needle on safety through advanced avionics (for those who can afford them), but the Communication Layer for many General Aviation flights remains stuck in 1945. Radio transmissions are "ephemeral"—they exist for a few seconds and then vanish.
 
