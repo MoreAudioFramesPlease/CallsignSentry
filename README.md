@@ -1,5 +1,5 @@
 # 📡 CallsignSentry
-**The Guard Dog for Aviation Radio.**
+**A Watchdog for Aviation Radio.**
 
 CallsignSentry does not have ANY code today (2026-01-29). There are a handful of interested people who will hopefully be participating in research to make it real over time. Please check out [Discussions](https://github.com/MoreAudioFramesPlease/CallsignSentry/discussions) to see where we're at and what we're struggling with.
 
