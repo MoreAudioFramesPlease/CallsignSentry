@@ -9,7 +9,7 @@ CallsignSentry will be an Android-based "Brain-in-a-Box" that monitors the entir
 
 ## 🎯 The Mission
 General Aviation pilots often operate in high-workload environments where "missing a call" from another station (like ATC) is a common point of friction and potential risk. CallsignSentry acts as a digital safety-net by providing:
-1. **Omni-Frequency Monitoring:** Watches your active frequency AND others (e.g., nearby CTAFs, Tower, Approach, Departure, Ground, Guard) simultaneously.
+1. **Whole-band Monitoring:** Watches your active frequency AND others (e.g., nearby CTAFs, Tower, Approach, Departure, Ground, Guard) simultaneously.
 2. **Callsign Detection:** Passive AI-driven keyword spotting for your tail number or flight callsign.
 3. **Instant Recall:** A one-touch "What did they just say?" audio replay of the last transmission.
 
@@ -24,12 +24,12 @@ We are prioritizing "proven blocks" to reach a functional prototype quickly:
 * **Hardware:** HackRF One (or RTL-SDR) + Android Host (via USB-C).
 * **Processing:** RAM-first ring buffering to minimize I/O latency and SSD wear.
 * **Transcription:** Lightweight, local-only Whisper/Vosk model tuned for aviation phraseology.
-* **Interface:** Android Foreground Service with a high-contrast "Annunciator" UI.
+* **Interface:** Android Foreground Service with a high-contrast "Annunciator" UI eventually, but probably should probably be tossed in the backseat during initial testing
 
 ---
 
 ## 🏗️ System Architecture
-1. **SDR Firehose:** SDR captures ~20MHz of bandwidth.
+1. **Radio intake:** SDR captures ~20MHz of bandwidth covering the civil airband from 108–137 MHz
 2. **Slicing:** `rtl-airband` detects power-per-bin and "slices" transmissions into discrete PCM/WAV files.
 3. **Transcription:** Slices are fed into a local AI inference engine. (possibly extending on [WhisperATC](https://github.com/jlvdoorn/WhisperATC))
 4. **Logic:** If `TRANSMISSION_TEXT` contains `LOCAL_CALLSIGN`, trigger an immediate visual/haptic alert.
