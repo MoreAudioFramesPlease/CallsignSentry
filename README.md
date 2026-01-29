@@ -3,7 +3,7 @@
 
 CallsignSentry does not have ANY code today (2026-01-29). There are a handful of interested people who will hopefully be participating in research to make it real over time. Please check out [Discussions](https://github.com/MoreAudioFramesPlease/CallsignSentry/discussions) to see where we're at and what we're struggling with.
 
-CallsignSentry is an Android-based "Brain-in-a-Box" that monitors the entire (hardware dependent) local airband radio spectrum. It uses an attached Wideband Software Defined Radio (SDR) and phone-local AI to transcribe radio traffic in real-time, alerting the crew when their specific callsign is detected, and providing instant playback of the last transmission.
+CallsignSentry will be an Android-based "Brain-in-a-Box" that monitors the entire (hardware dependent) local airband radio spectrum. It uses an attached Wideband Software Defined Radio (SDR) and phone-local AI to transcribe radio traffic in real-time, alerting the crew when their specific callsign is detected, and providing instant playback of the last transmission.
 
 ---
 
