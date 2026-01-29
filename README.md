@@ -8,19 +8,19 @@ CallsignSentry will be an Android-based "Brain-in-a-Box" that monitors the entir
 ---
 
 ## 🎯 The Mission
-General Aviation pilots often operate in high-workload environments where "missing a call" from another station (like ATC) is a common point of friction and potential major risk. CallsignSentry acts as a digital safety-net by providing:
+General Aviation pilots often operate in high-workload environments where "missing a call" from another station (like ATC) is a common point of friction and potential risk. CallsignSentry acts as a digital safety-net by providing:
 1. **Omni-Frequency Monitoring:** Watches your active frequency AND others (e.g., nearby CTAFs, Tower, Approach, Departure, Ground, Guard) simultaneously.
 2. **Callsign Detection:** Passive AI-driven keyword spotting for your tail number or flight callsign.
 3. **Instant Recall:** A one-touch "What did they just say?" audio replay of the last transmission.
 
-🪽 For non-pilots to better understand how contributing could one day help save someone's life, please see [Project Vision & Safety Mission](https://github.com/MoreAudioFramesPlease/CallsignSentry/blob/main/VISION.md).
+🪽 For non-pilots, please see [Project Vision & Safety Mission](https://github.com/MoreAudioFramesPlease/CallsignSentry/blob/main/VISION.md).
 
 ---
 
 ## 🛠️ The Tech Stack
 We are prioritizing "proven blocks" to reach a functional prototype quickly:
 
-* **RF Ingest:** [RTLSDR-Airband](https://github.com/szpajder/RTLSDR-Airband) (The "Slicer").
+* **RF Ingest:** [RTL-Airband](https://github.com/szpajder/RTLSDR-Airband) (The "Slicer").
 * **Hardware:** HackRF One (or RTL-SDR) + Android Host (via USB-C).
 * **Processing:** RAM-first ring buffering to minimize I/O latency and SSD wear.
 * **Transcription:** Lightweight, local-only Whisper/Vosk model tuned for aviation phraseology.
