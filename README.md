@@ -32,7 +32,7 @@ What's alredy been proven?
 * ✅ Automatic transmissions extraction from wideband, by open-source projects
 
 What's missing?
-* ⛔ *Open Source* AI-based transcription that can run on Android
+* ⛔ *Open Source* AI-based transcription that can run on Android offline
 
 
 
