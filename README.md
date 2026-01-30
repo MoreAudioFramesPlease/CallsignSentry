@@ -28,12 +28,11 @@ We are prioritizing "proven blocks" to reach a functional prototype quickly:
 
 What's alredy been proven?
 
-✅ In-cockpit AI-based transcription of radio, by commercial projects. See Stratus Insight (https://stratusinsight.app/) and FlyShirley (https://airplane.team/)
-✅ Automatic transmissions extraction from wideband, by open-source projects
-
+* ✅ In-cockpit AI-based transcription of radio, by commercial projects. See Stratus Insight (https://stratusinsight.app/) and FlyShirley (https://airplane.team/)
+* ✅ Automatic transmissions extraction from wideband, by open-source projects
 
 What's missing?
-⛔ *Open Source* AI-based transcription that can run on Android
+* ⛔ *Open Source* AI-based transcription that can run on Android
 
 
 
