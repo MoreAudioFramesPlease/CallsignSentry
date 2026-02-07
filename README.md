@@ -28,8 +28,9 @@ We are prioritizing "proven blocks" to reach a functional prototype quickly:
 
 What's alredy been proven?
 
+* ✅ Automatic transmissions extraction from wideband (by ground stations) using open-source projects (like [RTL-Airband](https://github.com/szpajder/RTLSDR-Airband))
 * ✅ In-cockpit AI-based transcription of radio, by commercial projects. See Stratus Insight (https://stratusinsight.app/) and FlyShirley (https://airplane.team/)
-* ✅ Automatic transmissions extraction from wideband, by open-source projects
+
 
 What's missing?
 * ⛔ Reliable, open-source and offline keyword spotting and transcription optimized for narrowband AM and localized airband traffic
