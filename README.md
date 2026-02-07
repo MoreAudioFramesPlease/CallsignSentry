@@ -1,5 +1,5 @@
 # 📡 CallsignSentry
-**A Watchdog for Aviation Radio.**
+**An in-cockpit watchdog for aviation radio.**
 
 CallsignSentry does not have ANY code today (2026-01-29). There are a handful of interested people who will hopefully be participating in research to make it real over time. Please check out [Discussions](https://github.com/MoreAudioFramesPlease/CallsignSentry/discussions) to see where we're at and what we're struggling with.
 
@@ -33,11 +33,12 @@ What's alredy been proven?
 
 What's missing?
 * ⛔ Reliable, open-source and offline keyword spotting and transcription optimized for narrowband AM and localized airband traffic
-* ⛔ An easy way to alert crew on keyword hits and link to recorded data 
+* ⛔ An easy way to alert crew on keyword hits and link to recorded data
+* ⛔ A hardware Bill of Materials tested in-flight
 
 ---
 
-## 🏗️ System Architecture
+## 🏗️ Architecture
 1. **Radio intake:** SDR captures ~20MHz of bandwidth covering the civil airband from 108–137 MHz
 2. **Slicing:** `rtl-airband` detects power-per-bin and "slices" transmissions into discrete PCM/WAV files.
 3. **Transcription:** Slices are fed into a local KWS/AI inference engine. (possibly extending on [WhisperATC](https://github.com/jlvdoorn/WhisperATC))
@@ -55,7 +56,7 @@ What's missing?
 
 ## 🤝 Contributing
 We are looking for:
-* **SDR enthusiasts who are already using this tech to monitor local ATC.
+* **SDR enthusiasts** who are already experienced in using this tech to monitor local ATC.
 * **DSP Engineers** to optimize `rtl-airband` configurations for aviation-specific noise floors.
 * **AI/ML Enthusiasts** to help tune local models for high-noise cockpit audio.
 * **Pilots and operators** who see a use for this integration in actual GA missions. In particular, we are interested in hearing from those who might want to use this for search-and-rescue. 
