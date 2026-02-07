@@ -3,15 +3,15 @@
 
 CallsignSentry does not have ANY code today (2026-01-29). There are a handful of interested people who will hopefully be participating in research to make it real over time. Please check out [Discussions](https://github.com/MoreAudioFramesPlease/CallsignSentry/discussions) to see where we're at and what we're struggling with.
 
-CallsignSentry will be an Android-based "Brain-in-a-Box" that monitors the entire (hardware dependent) local airband radio spectrum. It will use an attached Wideband Software Defined Radio (SDR) and phone-local AI to transcribe radio traffic in real-time, alert the crew when their specific callsign is detected, and provide instant playback of the last transmission.
+CallsignSentry will be a "Brain-in-a-Box" that monitors and records transmissions on the local airband radio spectrum. It will use a wideband Software Defined Radio (SDR) and device-local keyword spotting and transcription process to capture radio traffic in realtime,  alert the crew when their specific callsign (or keyword of interest) is detected, and provide instant playback of relevant transmissions.
 
 ---
 
 ## 🎯 The Mission
 General Aviation pilots often operate in high-workload environments where "missing a call" from another station (like ATC) is a common point of friction and potential risk. CallsignSentry acts as a digital safety-net by providing:
 1. **Whole-band Monitoring:** Watches your active frequency AND others (e.g., nearby CTAFs, Tower, Approach, Departure, Ground, Guard) simultaneously.
-2. **Callsign Detection:** Passive AI-driven keyword spotting for your tail number or flight callsign.
-3. **Instant Recall:** A one-touch "What did they just say?" audio replay of the last transmission.
+2. **Callsign Detection:** Passive keyword spotting for tail number or flight callsign.
+3. **Instant Recall:** A one-touch "What did they just say?" audio replay of transmissions.
 
 🪽 For non-pilots, please see [Project Vision & Safety Mission](https://github.com/MoreAudioFramesPlease/CallsignSentry/blob/main/VISION.md).
 
@@ -23,8 +23,8 @@ We are prioritizing "proven blocks" to reach a functional prototype quickly:
 * **RF Ingest:** [RTL-Airband](https://github.com/szpajder/RTLSDR-Airband) (The "Slicer").
 * **Hardware:** HackRF One (or RTL-SDR) + Android Host (via USB-C).
 * **Processing:** RAM-first ring buffering to minimize I/O latency and SSD wear.
-* **Transcription:** Lightweight, local-only Whisper/Vosk model tuned for aviation phraseology.
-* **Interface:** Android Foreground Service with a high-contrast "Annunciator" UI eventually, but probably should probably be tossed in the backseat during initial testing
+* **Processing and Transcription:** Lightweight, local-only Keyword (aka Wakeword) Spotting, combined with Whisper/Vosk tuned for aviation phraseology.
+* **Interface:** TBD Foreground Service with a high-contrast "Annunciator" UI and an easy, non-distracting way to play recorded transmissions
 
 What's alredy been proven?
 
@@ -32,24 +32,22 @@ What's alredy been proven?
 * ✅ Automatic transmissions extraction from wideband, by open-source projects
 
 What's missing?
-* ⛔ *Open Source* AI-based transcription that can run on Android offline
-
-
+* ⛔ Reliable, open-source and offline keyword spotting and transcription optimized for narrowband AM and localized airband traffic
+* ⛔ An easy way to alert crew on keyword hits and link to recorded data 
 
 ---
 
 ## 🏗️ System Architecture
 1. **Radio intake:** SDR captures ~20MHz of bandwidth covering the civil airband from 108–137 MHz
 2. **Slicing:** `rtl-airband` detects power-per-bin and "slices" transmissions into discrete PCM/WAV files.
-3. **Transcription:** Slices are fed into a local AI inference engine. (possibly extending on [WhisperATC](https://github.com/jlvdoorn/WhisperATC))
+3. **Transcription:** Slices are fed into a local KWS/AI inference engine. (possibly extending on [WhisperATC](https://github.com/jlvdoorn/WhisperATC))
 4. **Logic:** If `TRANSMISSION_TEXT` contains `LOCAL_CALLSIGN`, trigger an immediate visual/haptic alert.
-5. **Buffer:** The last 5 minutes of all audio slices are held in a RAM-based circular buffer for instant replay.
+5. **Buffer:** The last N minutes of all audio slices are kept in RAM-based circular buffers for instant replay.
 
 ---
 
 ## 🚧 Development Roadmap (Phase 1)
-- [ ] **Ingest:** Port/Cross-compile `rtl-airband` for Android (Termux/Native).
-- [ ] **Transcription:** Benchmark local Whisper.tflite/Vosk performance on mobile SoCs.
+- [ ] **Transcription:** Benchmark local KWS/Whisper.tflite/Vosk performance on low-power hardware.
 - [ ] **Callsign Logic:** Implement fuzzy-string matching to account for transcription variants (e.g., "One-Two-Three" vs ICAO standard "One-Two-Tree" vs the vulgar "One-Hundred-Twenty-Three").
 - [ ] **UI:** Simple "Annunciator" screen with a single "REPLAY" button.
 
@@ -57,9 +55,10 @@ What's missing?
 
 ## 🤝 Contributing
 We are looking for:
-* **Android/NDK Developers** familiar with USB-OTG and SDR drivers.
+* **SDR enthusiasts who are already using this tech to monitor local ATC.
 * **DSP Engineers** to optimize `rtl-airband` configurations for aviation-specific noise floors.
 * **AI/ML Enthusiasts** to help tune local models for high-noise cockpit audio.
+* **Pilots and operators** who see a use for this integration in actual GA missions. In particular, we are interested in hearing from those who might want to use this for search-and-rescue. 
 
 ---
 
