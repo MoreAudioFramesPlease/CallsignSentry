@@ -21,8 +21,8 @@ General Aviation pilots often operate in high-workload environments where "missi
 We are prioritizing "proven blocks" to reach a functional prototype quickly:
 
 * **RF Ingest:** [RTL-Airband](https://github.com/szpajder/RTLSDR-Airband) (The "Slicer").
-* **Hardware:** HackRF One (or RTL-SDR) + Android Host (via USB-C).
-* **Processing:** RAM-first ring buffering to minimize I/O latency and SSD wear.
+* **Hardware:** Wideband SDR (HackRF / Airspy / SDRPlay) + low-power headless computer running Linux
+* **Processing:** RAM-first ring buffering to minimize I/O latency
 * **Processing and Transcription:** Lightweight, local-only Keyword (aka Wakeword) Spotting, combined with Whisper/Vosk tuned for aviation phraseology.
 * **Interface:** TBD Foreground Service with a high-contrast "Annunciator" UI and an easy, non-distracting way to play recorded transmissions
 
